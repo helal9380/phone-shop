@@ -29,8 +29,8 @@
         <div class="text-center my-10">
             <h3 class="text-3xl font-semibold mb-3">Search your phone</h3>
             <div class="flex gap-3 items-center w-1/2 mx-auto">
-                <input type="text" placeholder="Type here" class="input input-bordered input-success w-full" />
-                <button class="btn bg-[#0D6EFD] text-white font-semibold hover:bg-[#2c80ff]">Search</button>
+                <input id="inputField" type="text" placeholder="Type here" class="input input-bordered input-success w-full" />
+                <button onclick="handleSearchPhone()" class="btn bg-[#0D6EFD] text-white font-semibold hover:bg-[#2c80ff]">Search</button>
             </div>
         </div>
 
@@ -38,6 +38,9 @@
 
         <div id="phones-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             
+        </div>
+        <div id="show-all-btn" class="mt-10 w-24 mx-auto hidden">
+            <button onclick="handleSearchPhone()" class="btn bg-[#0D6EFD] text-white font-semibold hover:bg-[#2c80ff]">Show All</button>
         </div>
     </main>
     <footer>

@@ -1,8 +1,8 @@
 /** @format */
 
-const loadPhoneData = async () => {
+const loadPhoneData = async (searchText) => {
   const responsive = await fetch(
-    "https://openapi.programming-hero.com/api/phones?search=iphone"
+    `https://openapi.programming-hero.com/api/phones?search=${searchText}`
   );
   const data = await responsive.json();
   console.log(data.data);
@@ -13,8 +13,26 @@ const loadPhoneData = async () => {
 // display all phone
 
 const displayPhone = (phones) => {
+
+  // only 10 phones show
+  const showBtn = document.getElementById('show-all-btn');
+  if(phones.length > 12) {
+    
+    showBtn.classList.remove('hidden');
+  }else {
+    showBtn.classList.add('hidden')
+  }
+ 
+
+
+  phones = phones.slice(0, 12);
+
+
     // phone container
   const phoneContainer = document.getElementById("phones-container");
+
+// reset phone container 
+phoneContainer.textContent = '';
 //   looping phone
   phones.forEach((phone) => {
     // create div
@@ -37,6 +55,18 @@ const displayPhone = (phones) => {
         // append child
     phoneContainer.appendChild(div);
   });
+  
 };
 
-loadPhoneData();
+
+// handle search phone
+const handleSearchPhone = () => {
+  
+  const inputFieldText = document.getElementById('inputField');
+  const inputText = inputFieldText.value;
+  inputFieldText.value = '';
+  loadPhoneData(inputText);
+}
+
+
+
