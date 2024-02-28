@@ -28,6 +28,9 @@
         <!-- search phone section -->
         <div class="text-center my-10">
             <h3 class="text-3xl font-semibold mb-3">Search your phone</h3>
+            <div id="massage" class="text-center text-xl text-red-500 mb-5 hidden">
+                <h3>Don't found any phone</h3>
+            </div>
             <div class="flex gap-3 items-center w-1/2 mx-auto">
                 <input id="inputField" type="text" placeholder="Type here" class="input input-bordered input-success w-full" />
                 <button onclick="handleSearchPhone()" class="btn bg-[#0D6EFD] text-white font-semibold hover:bg-[#2c80ff]">Search</button>
@@ -36,11 +39,27 @@
 
         <!-- show all Phone section -->
 
-        <div id="phones-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <section>
+            <div id="loading-bars" class="flex justify-center items-center hidden">
+                <span class="loading loading-bars loading-lg"></span>
+            </div>
+            <div id="phones-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        </section>
             
         </div>
+        <!-- show all button -->
+        <section>
+            <!-- Open the modal using ID.showModal() method -->
+
+            <!-- show details phone -->
+
+            <div id="show-details-phone">
+
+            </div>
+            
+        </section>
         <div id="show-all-btn" class="mt-10 w-24 mx-auto hidden">
-            <button onclick="handleSearchPhone()" class="btn bg-[#0D6EFD] text-white font-semibold hover:bg-[#2c80ff]">Show All</button>
+            <button onclick="handleShowAll()" class="btn bg-[#0D6EFD] text-white font-semibold hover:bg-[#2c80ff]">Show All</button>
         </div>
     </main>
     <footer>
